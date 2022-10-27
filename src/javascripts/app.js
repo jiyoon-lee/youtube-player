@@ -8,10 +8,10 @@ export default class App {
   }
   init() {
     this.intro.show();
-    // setTimeout(() => {
-    //   this.render();
-    //   this.intro.hide()
-    // }, 750)
+    setTimeout(() => {
+      this.render();
+      this.intro.hide()
+    }, 550)
   }
   setup() {
 

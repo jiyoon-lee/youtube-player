@@ -1,5 +1,52 @@
 /* intro */
 .intro {
-  height: 0;
-  width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9000;
+  transition: all ease-out 1s;
+}
+
+.intro img {
+  width: 90%;
+}
+
+/* tabButtons */
+.app-controller {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  bottom: 0;
+  background-color: #f2f2f2;
+}
+
+.app-controller li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+}
+
+.app-controller li.on {
+  color: #9B51E0;
+}
+
+.button-app-controller {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.icon-top5 {
+  background-color: url(../assets/icons/search.png);
 }
