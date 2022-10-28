@@ -16,6 +16,10 @@
   width: 90%;
 }
 
+ul {
+  list-style: none;
+}
+
 /* tabButtons */
 .app-controller {
   display: grid;
@@ -34,10 +38,6 @@
   font-size: 10px;
 }
 
-.app-controller li.on {
-  color: #9B51E0;
-}
-
 .button-app-controller {
   display: flex;
   flex-direction: column;
@@ -47,6 +47,21 @@
   height: 100%;
 }
 
-.icon-top5 {
-  background-color: url(../assets/icons/search.png);
+.tab-icon {
+	display: block;
+	width: 20px;
+	height: 20px;
+	margin-bottom: 6px;
+	background-size: 20px;
+	background-repeat: no-repeat;
+}
+
+.icon-video {
+  background-image: url(../assets/icons/video.png);
+}
+.icon-playedlist {
+  background-image: url(../assets/icons/check.png);
+}
+.icon-search {
+  background-image: url(../assets/icons/search.png);
 }

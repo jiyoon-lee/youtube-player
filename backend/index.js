@@ -8,7 +8,7 @@ app.get('/', (request, response) => {
   response.sendFile(path.join(__dirname, '../'))
 })
 
-const PORT = 3000;
+const PORT = 3300;
 app.listen(PORT, () => {
   console.log(`Server listening at http://localhost:${PORT}`)
 })

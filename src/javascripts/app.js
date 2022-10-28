@@ -1,10 +1,7 @@
-import { Intro } from './components/index.js';
-
+import { Intro, TabButtons } from './components/index.js';
 export default class App {
-  constructor({ el }) {
-    this.rootElement = document.querySelector(el);
-    this.intro = new Intro()
-    this.init()
+  constructor(props) {
+    this.props = props
   }
   init() {
     this.intro.show();
@@ -14,8 +11,15 @@ export default class App {
     }, 550)
   }
   setup() {
-
+    const { el } = this.props;
+    this.rootElement = document.querySelector(el);
+    this.intro = new Intro()
+    this.tabButtons = new TabButtons()
+    this.render()
+    // this.init()
   }
   render() {
+    const tabButtons = this.tabButtons.render()
+    this.rootElement.append(tabButtons)
   }
 }
