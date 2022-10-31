@@ -1,4 +1,4 @@
-import { getClosestElement } from '../../utils/index.js'
+import { findIndexListElement, getClosestElement } from '../../utils/index.js'
 
 export default class TabButtons {
   constructor() {
@@ -35,8 +35,16 @@ export default class TabButtons {
   bindEvents() {
     this.renderElement.addEventListener('click', (event) => {
       const element = getClosestElement(event.target, 'li')
-      console.log(element)
+      const currentIndex = findIndexListElement(element)
+      this.emit('clickTab', { currentIndex })
     })
+  }
+  on(eventName, callback) {
+    this.events = this.events ? this.events : {}
+    this.events[eventName] = callback
+  }
+  emit(eventName, payload) {
+    this.events[eventName] && this.events[eventName](payload);
   }
   render() {
     return this.renderElement;

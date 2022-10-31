@@ -19,7 +19,7 @@ export default class Intro {
   hide() {
     this.renderElement.style.opacity = 0;
     setTimeout(() => {
-      this.parentElement.remove(this.renderElement)
+      this.parentElement.removeChild(this.renderElement)
     }, 1000)
   }
 }

@@ -8,6 +8,7 @@
   bottom: 0;
   left: 0;
   right: 0;
+  background-color: white;
   z-index: 9000;
   transition: all ease-out 1s;
 }
@@ -64,4 +65,16 @@ ul {
 }
 .icon-search {
   background-image: url(../assets/icons/search.png);
+}
+
+/* topMovies */
+.contents-top5 {
+  padding-bottom: 50%;
+  display: flex;
+  
+  align-items: flex-end;
+}
+.top5-roof {
+  padding-bottom: 50%;
+  background-color: #363636;
 }
