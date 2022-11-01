@@ -14,9 +14,32 @@ export default class TopVideo {
   }
   render() {
     const topRoof = `<div class="top5-roof">
-                      <img width="100" src="assets/images/youtube_logo.png" />
+                      <img width="200" src="assets/images/youtube_logo.png" />
                     </div>`
-    this.rootElement.innerHTML = topRoof
+    const moviesList = this.movies.map((item, index) => {
+      const { snippet: { channelTitle, description, publishTime, thumbnails: { default: { url } }, title } } = item
+      return `
+        <li class="movie-list-item">
+          <div class="movie-rank">${index}</div>
+          <div class="movie-cover">
+            <img width="100" src="${url}" />
+          </div>
+          <div class="movie-content">
+            <div class="movie-info">
+              <div class="text-ellipsis movie-title">${title}</div>
+              <div class="text-ellipsis movie-subscription">${description}</div>
+              <div class="movie-channelName">${channelTitle}</div>
+              <div class="movie-createdDate">${publishTime}</div>
+            </div>
+          </div>
+        </li>
+      `
+    }).join('')
+    this.rootElement.innerHTML = topRoof + `
+      <ol class="movie-list">
+        ${moviesList}
+      </ol>
+    `
     return this.rootElement
   }
 }

@@ -68,13 +68,58 @@ ul {
 }
 
 /* topMovies */
-.contents-top5 {
-  padding-bottom: 50%;
-  display: flex;
-  
-  align-items: flex-end;
-}
 .top5-roof {
-  padding-bottom: 50%;
   background-color: #363636;
+  padding-top: 15%;
+}
+
+.movie-list-item {
+  display: grid;
+  grid-template-columns: 25px 110px 1fr;
+  align-items: center;
+}
+.movie-cover {
+  padding: 10px 10px 10px 0;
+}
+.movie-rank {
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+.movie-info {
+  display: grid;
+  grid-template-areas:
+    "title               title"
+    "subscription subscription"
+    "channelName   createdDate"
+  ;
+}
+.text-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.movie-title {
+  font-weight: bold;
+  margin-bottom: 3px;
+  font-size: 15px;
+  grid-area: title;
+  -webkit-line-clamp: 1;
+}
+.movie-subscription {
+  margin-bottom: 3px;
+  font-size: 12px;
+  grid-area: subscription;
+  -webkit-line-clamp: 2;
+}
+.movie-channelName {
+  font-size: 12px;
+  grid-area: channelName;
+}
+.movie-createdDate {
+  font-size: 12px;
+  grid-area: createdDate;
 }
