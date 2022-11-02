@@ -133,3 +133,44 @@ ul {
   font-size: 12px;
   grid-area: createdDate;
 }
+
+/* playView */
+.play-view {
+  display: flex;
+  flex-direction: column;
+}
+
+.play-view-roof {
+  background-color: #363636;
+}
+
+.view-info-container {
+  padding: 10px;
+  display: grid;
+  grid-template-areas:
+    "title               title"
+    "description   description"
+    "channelTitle  publishTime"
+  ;
+}
+
+.view-info-container .info-title {
+  grid-area: title;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.view-info-container .info-description {
+  grid-area: description;
+  margin-bottom: 10px;
+}
+
+.view-info-container .info-channel-title {
+  grid-area: channelTitle;
+}
+
+.view-info-container .info-publish-time {
+  grid-area: publishTime;
+  text-align: end;
+}
