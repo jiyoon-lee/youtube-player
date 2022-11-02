@@ -20,6 +20,27 @@ export default class TopVideo {
       const currentIndex = findIndexListElement(element)
     })
   }
+  on(eventName, callback) {
+    this.events = this.events ? this.events : {};
+    this.events[eventName] = callback;
+}
+  emit(eventName, payload) {
+    this.events[eventName] && this.events[eventName](payload)
+  }
+  bindEvents() {
+    this.rootElement.addEventListener('click', (event) => {
+      const element = getClosestElement(event.target, 'li')
+      const movieIndex = findIndexListElement(element)
+      let movieInfo = null
+      this.movies.forEach((item, index) => {
+        if (index === movieIndex) {
+          movieInfo = item;
+          return;
+        }
+      })
+      this.emit('openPlayView', { movieInfo, movieIndex })
+    })
+  }
   render() {
     const topRoof = `<div class="top5-roof">
                       <img width="150" src="assets/images/youtube_logo.png" />
