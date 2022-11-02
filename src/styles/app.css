@@ -49,20 +49,22 @@ ul {
 }
 
 .tab-icon {
-	display: block;
-	width: 20px;
-	height: 20px;
-	margin-bottom: 6px;
-	background-size: 20px;
-	background-repeat: no-repeat;
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 6px;
+  background-size: 20px;
+  background-repeat: no-repeat;
 }
 
 .icon-video {
   background-image: url(../assets/icons/video.png);
 }
+
 .icon-playedlist {
   background-image: url(../assets/icons/check.png);
 }
+
 .icon-search {
   background-image: url(../assets/icons/search.png);
 }
@@ -70,7 +72,7 @@ ul {
 /* topMovies */
 .top5-roof {
   background-color: #363636;
-  padding-top: 15%;
+  padding-top: 4%;
 }
 
 .movie-list-item {
@@ -78,15 +80,18 @@ ul {
   grid-template-columns: 25px 110px 1fr;
   align-items: center;
 }
+
 .movie-cover {
   padding: 10px 10px 10px 0;
 }
+
 .movie-rank {
   display: flex;
   font-weight: bold;
   justify-content: center;
   align-items: center;
 }
+
 .movie-info {
   display: grid;
   grid-template-areas:
@@ -95,6 +100,7 @@ ul {
     "channelName   createdDate"
   ;
 }
+
 .text-ellipsis {
   text-overflow: ellipsis;
   overflow: hidden;
@@ -102,6 +108,7 @@ ul {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+
 .movie-title {
   font-weight: bold;
   margin-bottom: 3px;
@@ -109,16 +116,19 @@ ul {
   grid-area: title;
   -webkit-line-clamp: 1;
 }
+
 .movie-subscription {
   margin-bottom: 3px;
   font-size: 12px;
   grid-area: subscription;
   -webkit-line-clamp: 2;
 }
+
 .movie-channelName {
   font-size: 12px;
   grid-area: channelName;
 }
+
 .movie-createdDate {
   font-size: 12px;
   grid-area: createdDate;

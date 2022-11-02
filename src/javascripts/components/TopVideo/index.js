@@ -1,7 +1,9 @@
+import { findIndexListElement, getClosestElement } from '../../utils/index.js'
 export default class TopVideo {
   constructor() {
     this.rootElement = TopVideo.createRootElement();
     this.movies = []
+    this.bindEvents()
   }
   static createRootElement() {
     const rootElement = document.createElement('article');
@@ -11,16 +13,22 @@ export default class TopVideo {
   }
   setMovies(movies = []) {
     this.movies = movies
+  }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+  bindEvents() {
+    this.rootElement.addEventListener('click', (event) => {
+      const element = getClosestElement(event.target, 'li')
+      const currentIndex = findIndexListElement(element)
+    })
   }
   render() {
     const topRoof = `<div class="top5-roof">
-                      <img width="200" src="assets/images/youtube_logo.png" />
+                      <img width="150" src="assets/images/youtube_logo.png" />
                     </div>`
     const moviesList = this.movies.map((item, index) => {
       const { snippet: { channelTitle, description, publishTime, thumbnails: { default: { url } }, title } } = item
       return `
         <li class="movie-list-item">
-          <div class="movie-rank">${index}</div>
+          <div class="movie-rank">${index + 1}</div>
           <div class="movie-cover">
             <img width="100" src="${url}" />
           </div>
