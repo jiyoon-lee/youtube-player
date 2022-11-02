@@ -1,4 +1,4 @@
-import { Intro, PlayedList, SearchView, TabButtons, TopVideo } from './components/index.js';
+import { Intro, PlayedList, PlayView, SearchView, TabButtons, TopVideo } from './components/index.js';
 import { removeAllChildNodes } from './utils/index.js';
 export default class App {
   constructor(props) {
@@ -19,6 +19,7 @@ export default class App {
     this.tabButtons = new TabButtons()
     this.topVideo = new TopVideo()
     this.playedList = new PlayedList()
+    this.playView = new PlayView
     this.searchView = new SearchView
     this.mainViewComponents = [this.topVideo, this.playedList, this.searchView]
     this.bindEvents();
@@ -30,6 +31,10 @@ export default class App {
       const { currentIndex = 0 } = payload;
       this.currentIndex = currentIndex;
       this.render();
+    })
+    this.topVideo.on('openPlayView', (payload) => {
+      this.playView.playMovie(payload)
+      this.playView.show();
     })
   }
   fetchMovies() {
